@@ -5,8 +5,8 @@ A ROS/Gazebo Pioneer 3DX model.
 
 To install:
 ```
-$ cd <catking_workspace_directory>/src
-$ git clone URL # (see github)
+$ cd <catkin_ws>/src
+$ git clone https://github.com/SD-Robot-Vision/PioneerModel.git
 $ cd ..
 $ catkin_make
 ```
