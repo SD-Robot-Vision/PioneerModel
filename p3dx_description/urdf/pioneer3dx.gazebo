@@ -74,8 +74,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 			<wheelSeparation>0.39</wheelSeparation>
 			<wheelDiameter>0.15</wheelDiameter>
 			<torque>5</torque>
-			<commandTopic>${ns}/cmd_vel</commandTopic>
-			<odometryTopic>${ns}/odom</odometryTopic>
+			<commandTopic>cmd_vel</commandTopic>
+			<odometryTopic>odom</odometryTopic>
 			<odometryFrame>odom</odometryFrame>
 			<robotBaseFrame>base_link</robotBaseFrame>
 		</plugin>
