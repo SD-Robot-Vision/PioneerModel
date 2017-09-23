@@ -83,7 +83,7 @@ NOTE: Migration to ROS kinetic and gazebo 7 performed by Oscar Lima olima@isr.te
             <odometryFrame>odom</odometryFrame>
             <robotBaseFrame>base_link</robotBaseFrame>
             <publishWheelTF>false</publishWheelTF>
-            <publishWheelJointState>false</publishWheelJointState>
+            <publishWheelJointState>true</publishWheelJointState>
             <rosDebugLevel>na</rosDebugLevel>
             <wheelAcceleration>0</wheelAcceleration>
             <wheelTorque>5</wheelTorque>
