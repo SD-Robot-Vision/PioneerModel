@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- 
+<!--
 This is the xacro description of a Pioneer 3DX, to be used in rviz and gazebo.
 Copyright (C) 2013 Rafael Berkvens rafael.berkvens@uantwerpen.be
 
@@ -47,7 +47,7 @@ NOTE: Migration to ROS kinetic and gazebo 7 performed by Oscar Lima olima@isr.te
             <box size="0.35 0.25 0.14" />
         </geometry>
     </collision>
-    
+
     <inertial>
         <mass value="3.5" />
         <origin xyz="-0.05 0 0" />
@@ -70,7 +70,7 @@ NOTE: Migration to ROS kinetic and gazebo 7 performed by Oscar Lima olima@isr.te
             <box size="0.45 0.38 0.01" />
         </geometry>
     </collision>
-    
+
     <inertial>
         <mass value="0.01" />
         <origin xyz="0 0 0" />
@@ -99,7 +99,7 @@ NOTE: Migration to ROS kinetic and gazebo 7 performed by Oscar Lima olima@isr.te
             <box size="0 0 0" />
         </geometry>
     </collision>
-    
+
     <inertial>
         <mass value="0.1" />
         <origin xyz="0 0 0" />

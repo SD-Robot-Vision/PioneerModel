@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- 
+<!--
 This is the gazebo urdf description of a Pioneer 3DX.
 Copyright (C) 2013 Rafael Berkvens rafael.berkvens@uantwerpen.be
 
@@ -62,7 +62,7 @@ NOTE: Migration to ROS kinetic and gazebo 7 performed by Oscar Lima olima@isr.te
         <kd>1.0</kd>
     </gazebo>
 
-  <!-- front_sonar -->  
+  <!-- front_sonar -->
     <gazebo reference="front_sonar">
       <material>Gazebo/Yellow</material>
     </gazebo>

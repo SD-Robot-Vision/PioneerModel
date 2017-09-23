@@ -34,7 +34,7 @@
     <!-- robot state publisher, listen to joint states and publish tf accordingly -->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
         respawn="false" output="screen" />
-    
+
     <!-- ros_control p3rd launch file -->
     <!-- <include file="$(find p3dx_control)/launch/control.launch" /> -->
 
