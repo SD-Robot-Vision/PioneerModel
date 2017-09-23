@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 
 <!--
+
 This is the xacro description of a Pioneer 3DX, to be used in rviz and gazebo.
 Copyright (C) 2013 Rafael Berkvens rafael.berkvens@uantwerpen.be
 
@@ -32,6 +33,9 @@ NOTE: Migration to ROS kinetic and gazebo 7 performed by Oscar Lima olima@isr.te
 <!-- import all gazebo-customization elements, including gazebo colors -->
 <xacro:include filename="$(find p3dx_description)/urdf/pioneer3dx.gazebo" />
 
+<!-- import materials to add color to the pioneer in rviz -->
+<xacro:include filename="$(find p3dx_description)/urdf/materials.xacro" />
+
 <!-- chassis -->
 <link name="base_link">
     <visual>
@@ -39,6 +43,7 @@ NOTE: Migration to ROS kinetic and gazebo 7 performed by Oscar Lima olima@isr.te
         <geometry name="pioneer_geom">
             <mesh filename="package://p3dx_description/meshes/chassis.stl" />
         </geometry>
+        <material name="ChassisRed"/>
     </visual>
 
     <collision>
@@ -62,6 +67,7 @@ NOTE: Migration to ROS kinetic and gazebo 7 performed by Oscar Lima olima@isr.te
         <geometry name="top_geom">
             <mesh filename="package://p3dx_description/meshes/top.stl" />
         </geometry>
+        <material name="TopBlack"/>
     </visual>
 
     <collision>
@@ -91,6 +97,7 @@ NOTE: Migration to ROS kinetic and gazebo 7 performed by Oscar Lima olima@isr.te
         <geometry name="pioneer_geom">
             <mesh filename="package://p3dx_description/meshes/swivel.stl" />
         </geometry>
+        <material name="SwivelGrey"/>
     </visual>
 
     <collision>
@@ -124,6 +131,7 @@ NOTE: Migration to ROS kinetic and gazebo 7 performed by Oscar Lima olima@isr.te
         <geometry name="pioneer_geom">
             <mesh filename="package://p3dx_description/meshes/center_hubcap.stl" />
         </geometry>
+        <material name="HubcapYellow"/>
     </visual>
 
     <collision>
@@ -158,6 +166,7 @@ NOTE: Migration to ROS kinetic and gazebo 7 performed by Oscar Lima olima@isr.te
         <geometry name="pioneer_geom">
             <mesh filename="package://p3dx_description/meshes/center_wheel.stl" />
         </geometry>
+        <material name="WheelBlack"/>
     </visual>
 
     <collision>
@@ -191,6 +200,7 @@ NOTE: Migration to ROS kinetic and gazebo 7 performed by Oscar Lima olima@isr.te
         <geometry name="pioneer_geom">
             <mesh filename="package://p3dx_description/meshes/front_sonar.stl" />
         </geometry>
+        <material name="SonarYellow"/>
     </visual>
 
     <collision>
