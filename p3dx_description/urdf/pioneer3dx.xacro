@@ -114,7 +114,7 @@ NOTE: Migration to ROS kinetic and gazebo 7 performed by Oscar Lima olima@isr.te
     </inertial>
 </link>
 
-<joint name="base_swivel_joint" type="fixed">
+<joint name="base_swivel_joint" type="continuous">
     <origin xyz="-0.185 0 0.055" rpy="0 0 0" />
     <axis xyz="0 0 1" />
     <anchor xyz="0 0 0" />
@@ -149,7 +149,7 @@ NOTE: Migration to ROS kinetic and gazebo 7 performed by Oscar Lima olima@isr.te
     </inertial>
 </link>
 
-<joint name="swivel_hubcap_joint" type="fixed">
+<joint name="swivel_hubcap_joint" type="continuous">
     <origin xyz="-0.026 0 -0.016" rpy="0 0 0" />
     <axis xyz="0 1 0" />
     <anchor xyz="0 0 0" />
