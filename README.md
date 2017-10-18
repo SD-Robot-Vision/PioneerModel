@@ -5,8 +5,7 @@ A ROS/Gazebo Pioneer 3DX model.
 
 To install:
 ```
-$ cd <catkin_ws>/src
-$ git clone https://github.com/socrob/PioneerModel.git
-$ cd ..
-$ catkin build
+cd <catkin_ws>/src
+git clone https://github.com/socrob/PioneerModel.git
+catkin build
 ```
