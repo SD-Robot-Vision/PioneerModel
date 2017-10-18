@@ -1,34 +1,41 @@
+<?xml version="1.0"?>
 <launch>
 
-	<!-- these are the arguments you can pass this launch file, for example 
-		paused:=true -->
-	<arg name="paused" default="false" />
-	<arg name="use_sim_time" default="true" />
-	<arg name="gui" default="true" />
-	<arg name="headless" default="false" />
-	<arg name="debug" default="false" />
+    <arg name="paused" default="false" />
+    <arg name="use_sim_time" default="true" />
+    <arg name="gui" default="true" />
+    <arg name="headless" default="false" />
+    <arg name="debug" default="false" />
 
-	<!-- We resume the logic in empty_world.launch, changing only the name of 
-		the world to be launched -->
-	<include file="$(find gazebo_ros)/launch/empty_world.launch">
-		<arg name="world_name" value="$(find p3dx_gazebo)/worlds/p3dx.world" />
-		<arg name="debug" value="$(arg debug)" />
-		<arg name="gui" value="$(arg gui)" />
-		<arg name="paused" value="$(arg paused)" />
-		<arg name="use_sim_time" value="$(arg use_sim_time)" />
-		<arg name="headless" value="$(arg headless)" />
-	</include>
+    <!-- set the desired robot world -->
+        <arg name="world_name" default="isr-testbed.world" />
+        <arg name="world_path" default="$(find mbot_simulation_environments)/worlds/" />
 
-	<!-- Load the URDF into the ROS Parameter Server -->
-	<param name="robot_description"
-		command="$(find xacro)/xacro.py '$(find p3dx_description)/urdf/pioneer3dx.xacro'" />
+    <!-- We resume the logic in empty_world.launch, changing only the name of
+        the world to be launched -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(arg world_path)$(arg world_name)" />
+        <arg name="debug" value="$(arg debug)" />
+        <arg name="gui" value="$(arg gui)" />
+        <arg name="paused" value="$(arg paused)" />
+        <arg name="use_sim_time" value="$(arg use_sim_time)" />
+        <arg name="headless" value="$(arg headless)" />
+    </include>
 
-	<!-- Run a python script to the send a service call to gazebo_ros to spawn 
-		a URDF robot -->
-	<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
-		respawn="false" output="screen" args="-urdf -model p3dx -param robot_description" />
+    <!-- Load the URDF into the ROS Parameter Server -->
+    <param name="robot_description"
+        command="$(find xacro)/xacro --inorder '$(find p3dx_description)/urdf/pioneer3dx.xacro'" />
 
-	<!-- ros_control p3rd launch file -->
-	<!-- <include file="$(find p3dx_control)/launch/control.launch" /> -->
+    <!-- Run a python script to the send a service call to gazebo_ros to spawn
+        a URDF robot -->
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
+        respawn="false" output="screen" args="-urdf -model p3dx -param robot_description -x 0.5 -y 0.5 -z 0.01" />
+
+    <!-- robot state publisher, listen to joint states and publish tf accordingly -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn="false" output="screen" />
+
+    <!-- ros_control p3rd launch file -->
+    <!-- <include file="$(find p3dx_control)/launch/control.launch" /> -->
 
 </launch>
