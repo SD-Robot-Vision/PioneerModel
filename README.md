@@ -8,5 +8,5 @@ To install:
 $ cd <catkin_ws>/src
 $ git clone https://github.com/socrob/PioneerModel.git
 $ cd ..
-$ catkin_make
+$ catkin build
 ```
